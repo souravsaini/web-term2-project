@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+:root {
+  --color-black: #000;
+  --color-grey: #222;
+  --color-grey-tint-1: #606063;
+  --color-grey-tint-2: #e1e1e1;
+  --color-black-shade: #1a1a1a;
+  --color-black-shade-1: #041e42;
+  --color-green-shade: #465b52;
+  --color-green-shade-1: #088178;
+  --color-white-shade: #e3e6f3;
+  --color-white-shade-1: #cce7d0;
+  --color-white-shade-2: #e8f6ea;
+  --color-orange: #f3b519;
+  --color-orange-shade-1: #ec544e;
+
+  --color-white: #fff;
+}
+
+html {
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* This is the browser font-size settings. Now 1rem = 10px */
+  font-size: 62.5%;
+}
+
+/*GLOBALS*/
+h1 {
+  font-size: 5rem;
+  line-height: 6.4rem;
+  color: var(--color-grey);
+}
+
+h2 {
+  font-size: 4.6rem;
+  line-height: 5.4rem;
+  color: var(--color-grey);
+}
+
+h4 {
+  font-size: 2rem;
+  color: var(--color-grey);
+}
+
+h6 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.6rem;
+  color: var(--color-green-shade);
+  margin: 1.5rem 0 2rem 0;
+}
+
+.section-p1 {
+  padding: 4rem 8rem;
+}
+
+.section-m1 {
+  margin: 4rem 0;
+}
+
+body {
+  width: 100%;
+}
+
+button.main {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1.5rem 3rem;
+  color: var(--color-black-shade);
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+button.white {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 1.1rem 1.8rem;
+  color: var(--color-white);
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid var(--color-white);
+  outline: none;
+  transition: 0.2s ease;
+}
+
+#hero-all {
+  background-image: url("../images/banner/b1.jpg");
+  height: 40vh;
+  width: 100%;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 1.4rem;
+}
+
+#hero-all h2,
+#hero-all p {
+  color: var(--color-white);
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>E-Commerce</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/shop.css" />
+  </head>
+  <body>
+    <section id="header">
+      <a href="#">
+        <img src="./images/logo.png" class="logo" alt="logo" />
+      </a>
+
+      <div>
+        <ul id="navbar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html" class="active">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li>
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="hero-all">
+      <h2>#shopfromhome</h2>
+      <p>Check out our coupons and save upto 70%</p>
+    </section>
+
+    <section id="featured-products" class="section-p1">
+      <div class="product-container"></div>
+    </section>
+
+    <section id="pagination" class="section-p1">
+      <a href="#"><i class="fa-solid fa-arrow-left"></i></a>
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+      <div class="news-text">
+        <h4>Signup for Newsletter</h4>
+        <p>
+          Get emails for our <span>latest offers</span> so that you won't miss
+          out.
+        </p>
+      </div>
+      <div class="form">
+        <input type="text" placeholder="Your email address" />
+        <button class="main">Signup</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="follow">
+        <h4>Follow us</h4>
+        <div class="icon">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram-square"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2022, E-commerce Application</p>
+      </div>
+    </footer>
+    <script src="./js/shop.js"></script>
+  </body>
+</html>
