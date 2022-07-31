@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./css/home.css" />
     <link rel="stylesheet" href="./css/cart.css" />
   </head>
-  <body onload="populateCart()">
+  <body onload="populateCart(localStorage.getItem('cart'))">
     <section id="header">
       <a href="#">
         <img src="./images/logo.png" class="logo" alt="logo" />
@@ -88,7 +88,7 @@
             <td><strong class="total-price">$335</strong></td>
           </tr>
         </table>
-        <button class="main">Checkout</button>
+        <button class="main checkout-btn">Checkout</button>
       </div>
     </section>
 

@@ -66,7 +66,7 @@ const products = [
   },
   {
     id: 9,
-    company: "",
+    company: "Levis",
     image: "./images/products/n1.jpg",
     name: "Cartoon astronaut T-Shirts",
     ratings: 4,
@@ -98,7 +98,7 @@ const products = [
   },
   {
     id: 13,
-    company: "",
+    company: "Gucci",
     image: "./images/products/n5.jpg",
     name: "Cartoon astronaut T-Shirts",
     ratings: 4,
@@ -160,10 +160,108 @@ const products = [
     ratings: 4,
     price: 85,
   },
+  // {
+  //   id: 21,
+  //   company: "Levis",
+  //   image: "./images/products/Jeans1.jpg",
+  //   name: "Levis Jeans",
+  //   ratings: 4.5,
+  //   price: 95,
+  // },
 ];
 
+//Register event listeners
+const filterCompanyEl = document.querySelector(".filter-company");
+const filterPriceEl = document.querySelector(".filter-price");
+const filterRatingEl = document.querySelector(".filter-rating");
+
+const filterProducts = () => {
+  let filteredProducts = products;
+  if (filterCompanyEl.value !== "all") {
+    filteredProducts = filteredProducts.filter(
+      (product) => product.company === filterCompanyEl.value
+    );
+  }
+  filteredProducts = filteredProducts.filter(
+    (product) => product.price <= filterPriceEl.value
+  );
+  filteredProducts = filteredProducts.filter(
+    (product) => product.ratings >= filterRatingEl.value
+  );
+
+  const productContainer = document.querySelector(".product-container");
+  productContainer.innerHTML = "";
+
+  loadFeaturedProducts(filteredProducts);
+};
+
+filterCompanyEl.addEventListener("change", filterProducts);
+filterPriceEl.addEventListener("change", filterProducts);
+filterRatingEl.addEventListener("change", filterProducts);
+
 //FUNCTIONS
-const loadFeaturedProducts = () => {
+
+const loadCompanies = () => {
+  let companies = ["all"];
+  const filterCompanyEl = document.querySelector(".filter-company");
+  products.forEach((product) => {
+    if (!companies.includes(product.company)) companies.push(product.company);
+  });
+
+  companies.forEach((company) => {
+    const optionEl = document.createElement("option");
+    optionEl.setAttribute("value", company);
+    optionEl.textContent = company;
+    filterCompanyEl.appendChild(optionEl);
+  });
+};
+loadCompanies();
+
+const loadFilterPrice = () => {
+  const filterPriceEl = document.querySelector(".filter-price");
+  let max = Math.max();
+  let min = Math.min();
+  products.forEach((product) => {
+    if (product.price > max) max = product.price;
+    if (product.price < min) min = product.price;
+  });
+  filterPriceEl.setAttribute("min", min);
+  filterPriceEl.setAttribute("max", max);
+  filterPriceEl.setAttribute("value", max);
+
+  const priceLabelEl = document.querySelector(".price-label");
+  priceLabelEl.textContent = `Price: $${max}`;
+
+  filterPriceEl.addEventListener("change", () => {
+    // const priceLabelEl = document.querySelector(".price-label");
+    priceLabelEl.textContent = `Price: $${filterPriceEl.value}`;
+  });
+};
+loadFilterPrice();
+
+const loadFilterRating = () => {
+  const filterRatingEl = document.querySelector(".filter-rating");
+  let max = Math.max();
+  let min = Math.min();
+  products.forEach((product) => {
+    if (product.ratings > max) max = product.ratings;
+    if (product.ratings < min) min = product.ratings;
+  });
+  filterRatingEl.setAttribute("min", min);
+  filterRatingEl.setAttribute("max", max);
+  filterRatingEl.setAttribute("value", min);
+
+  const ratingLabelEl = document.querySelector(".rating-label");
+  ratingLabelEl.textContent = `Rating: ${min}`;
+
+  filterRatingEl.addEventListener("change", () => {
+    // const ratingLabelEl = document.querySelector(".rating-label");
+    ratingLabelEl.textContent = `Rating: ${filterRatingEl.value}`;
+  });
+};
+loadFilterRating();
+
+const loadFeaturedProducts = (products) => {
   const productContainer = document.querySelector(".product-container");
   products.forEach(({ id, company, image, name, ratings, price }) => {
     let mainDiv = document.createElement("div");
@@ -225,9 +323,16 @@ const loadFeaturedProducts = () => {
 
     productContainer.appendChild(mainDiv);
   });
+
+  if (productContainer.childElementCount === 0) {
+    const h2 = document.createElement("h2");
+    h2.style.width = "100%";
+    h2.textContent = "No products found.";
+    productContainer.appendChild(h2);
+  }
 };
 
-loadFeaturedProducts();
+loadFeaturedProducts(products);
 
 const addToCart = (e, id, company, image, name, price) => {
   e.preventDefault();
@@ -266,5 +371,7 @@ const addToCart = (e, id, company, image, name, price) => {
     console.log(storedSubtotal);
     storedSubtotal += price;
     localStorage.setItem("subtotal", storedSubtotal);
+
+    alert("Item added to cart");
   }
 };

@@ -80,7 +80,8 @@
 
 #featured-products .product-container {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: 2rem;
   padding-top: 2rem;
   flex-wrap: wrap;
 }
