@@ -18,9 +18,13 @@
 
 #pagination {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
-#pagination a {
+#pagination button {
   text-decoration: none;
   background-color: var(--color-green-shade-1);
   padding: 1.5rem 2rem;

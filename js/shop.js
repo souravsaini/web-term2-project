@@ -3,32 +3,36 @@ const products = [
   {
     id: 1,
     company: "Adidas",
+    category: "T-shirt",
     image: "./images/products/f1.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 5,
     price: 78,
   },
   {
     id: 2,
     company: "Peter England",
+    category: "T-shirt",
     image: "./images/products/f2.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4.5,
     price: 89,
   },
   {
     id: 3,
     company: "Louis Phillipe",
+    category: "T-shirt",
     image: "./images/products/f3.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4.5,
     price: 78,
   },
   {
     id: 4,
     company: "John Players",
+    category: "T-shirt",
     image: "./images/products/f4.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4.5,
     price: 90,
   },
@@ -36,7 +40,8 @@ const products = [
     id: 5,
     company: "Gap",
     image: "./images/products/f5.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    category: "T-shirt",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4,
     price: 65,
   },
@@ -44,139 +49,324 @@ const products = [
     id: 6,
     company: "Gucci",
     image: "./images/products/f6.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    category: "T-shirt",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4.5,
     price: 99,
   },
   {
     id: 7,
     company: "Levis",
+    category: "T-shirt",
     image: "./images/products/f7.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4.5,
     price: 77,
   },
   {
     id: 8,
     company: "Van Heusen",
+    category: "T-shirt",
     image: "./images/products/f8.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4,
     price: 85,
   },
   {
     id: 9,
     company: "Levis",
+    category: "T-shirt",
     image: "./images/products/n1.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4,
     price: 65,
   },
   {
     id: 10,
     company: "Gucci",
+    category: "T-shirt",
     image: "./images/products/n2.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4.5,
     price: 99,
   },
   {
     id: 11,
     company: "Levis",
+    category: "T-shirt",
     image: "./images/products/n3.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4.5,
     price: 77,
   },
   {
     id: 12,
     company: "Van Heusen",
+    category: "T-shirt",
     image: "./images/products/n4.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4,
     price: 85,
   },
   {
     id: 13,
     company: "Gucci",
+    category: "T-shirt",
     image: "./images/products/n5.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4,
     price: 65,
   },
   {
     id: 14,
     company: "Gucci",
+    category: "T-shirt",
     image: "./images/products/n6.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4.5,
     price: 99,
   },
   {
     id: 15,
     company: "Levis",
+    category: "T-shirt",
     image: "./images/products/n7.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4.5,
     price: 77,
   },
   {
     id: 16,
     company: "Van Heusen",
+    category: "T-shirt",
     image: "./images/products/n8.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4,
     price: 85,
   },
   {
     id: 17,
     company: "Gap",
+    category: "T-shirt",
     image: "./images/products/f9.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4,
     price: 65,
   },
   {
     id: 18,
     company: "Gucci",
+    category: "T-shirt",
     image: "./images/products/f10.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4.5,
     price: 99,
   },
   {
     id: 19,
     company: "Levis",
+    category: "T-shirt",
     image: "./images/products/f11.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4.5,
     price: 77,
   },
   {
     id: 20,
     company: "Van Heusen",
+    category: "T-shirt",
     image: "./images/products/f12.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    name: "Cartoon astronaut T-shirt",
     ratings: 4,
     price: 85,
   },
-  // {
-  //   id: 21,
-  //   company: "Levis",
-  //   image: "./images/products/Jeans1.jpg",
-  //   name: "Levis Jeans",
-  //   ratings: 4.5,
-  //   price: 95,
-  // },
+  {
+    id: 21,
+    company: "Levis",
+    category: "Jeans",
+    image: "./images/products/1.png",
+    name: "Jeans",
+    ratings: 4.5,
+    price: 95,
+  },
+  {
+    id: 22,
+    company: "Van Heusen",
+    category: "Jeans",
+    image: "./images/products/2.png",
+    name: "Jeans",
+    ratings: 4.5,
+    price: 95,
+  },
+  {
+    id: 23,
+    company: "Levis",
+    category: "Jeans",
+    image: "./images/products/3.png",
+    name: "Jeans",
+    ratings: 4.5,
+    price: 95,
+  },
+  {
+    id: 24,
+    company: "Van Heusen",
+    category: "Jeans",
+    image: "./images/products/4.png",
+    name: "Jeans",
+    ratings: 4.5,
+    price: 95,
+  },
+  {
+    id: 25,
+    company: "Old Navy",
+    category: "Jeans",
+    image: "./images/products/5.png",
+    name: "Jeans",
+    ratings: 4.5,
+    price: 95,
+  },
+  {
+    id: 26,
+    company: "Gap",
+    category: "Jeans",
+    image: "./images/products/6.png",
+    name: "Jeans",
+    ratings: 4.5,
+    price: 95,
+  },
+  {
+    id: 27,
+    company: "Gap",
+    category: "Jeans",
+    image: "./images/products/7.png",
+    name: "Jeans",
+    ratings: 4.5,
+    price: 95,
+  },
+  {
+    id: 28,
+    company: "Levis",
+    category: "Jeans",
+    image: "./images/products/8.png",
+    name: "Jeans",
+    ratings: 4.5,
+    price: 95,
+  },
+  {
+    id: 29,
+    company: "Old Navy",
+    category: "Jeans",
+    image: "./images/products/9.png",
+    name: "Jeans",
+    ratings: 4.5,
+    price: 95,
+  },
+  {
+    id: 30,
+    company: "Nike",
+    category: "Shoes",
+    image: "./images/products/shoes1.jpg",
+    name: "Shoes",
+    ratings: 4.5,
+    price: 120,
+  },
+  {
+    id: 31,
+    company: "Reebok",
+    category: "Shoes",
+    image: "./images/products/shoes2.jpg",
+    name: "Shoes",
+    ratings: 4,
+    price: 100,
+  },
+  {
+    id: 32,
+    company: "Adidas",
+    category: "Shoes",
+    image: "./images/products/shoes3.jpg",
+    name: "Shoes",
+    ratings: 4.5,
+    price: 135,
+  },
+  {
+    id: 33,
+    company: "Reebok",
+    category: "Shoes",
+    image: "./images/products/shoes4.jpg",
+    name: "Shoes",
+    ratings: 4.5,
+    price: 95,
+  },
+  {
+    id: 34,
+    company: "Nike",
+    category: "Shoes",
+    image: "./images/products/shoes5.jpg",
+    name: "Shoes",
+    ratings: 5,
+    price: 105,
+  },
+  {
+    id: 35,
+    company: "Adidas",
+    category: "Shoes",
+    image: "./images/products/shoes6.jpg",
+    name: "Shoes",
+    ratings: 4.5,
+    price: 140,
+  },
+  {
+    id: 36,
+    company: "Nike",
+    category: "Shoes",
+    image: "./images/products/shoes7.jpg",
+    name: "Shoes",
+    ratings: 4,
+    price: 95,
+  },
+  {
+    id: 37,
+    company: "Reebok",
+    category: "Shoes",
+    image: "./images/products/shoes8.jpg",
+    name: "Shoes",
+    ratings: 4.5,
+    price: 90,
+  },
+  {
+    id: 38,
+    company: "Adidas",
+    category: "Shoes",
+    image: "./images/products/shoes9.jpg",
+    name: "Shoes",
+    ratings: 4.5,
+    price: 130,
+  },
+  {
+    id: 39,
+    company: "Nike",
+    category: "Shoes",
+    image: "./images/products/shoes10.jpg",
+    name: "Shoes",
+    ratings: 5,
+    price: 110,
+  },
 ];
 
 //Register event listeners
 const filterCompanyEl = document.querySelector(".filter-company");
 const filterPriceEl = document.querySelector(".filter-price");
 const filterRatingEl = document.querySelector(".filter-rating");
+const filterCategoryEl = document.querySelector(".filter-category");
 
 const filterProducts = () => {
   let filteredProducts = products;
+
+  if (filterCategoryEl.value !== "all") {
+    filteredProducts = filteredProducts.filter(
+      (product) => product.category === filterCategoryEl.value
+    );
+  }
   if (filterCompanyEl.value !== "all") {
     filteredProducts = filteredProducts.filter(
       (product) => product.company === filterCompanyEl.value
@@ -198,8 +388,26 @@ const filterProducts = () => {
 filterCompanyEl.addEventListener("change", filterProducts);
 filterPriceEl.addEventListener("change", filterProducts);
 filterRatingEl.addEventListener("change", filterProducts);
+filterCategoryEl.addEventListener("change", filterProducts);
 
 //FUNCTIONS
+
+const loadCategories = () => {
+  let categories = ["all"];
+  const filterCategoryEl = document.querySelector(".filter-category");
+  products.forEach((product) => {
+    if (!categories.includes(product.category))
+      categories.push(product.category);
+  });
+
+  categories.forEach((category) => {
+    const optionEl = document.createElement("option");
+    optionEl.setAttribute("value", category);
+    optionEl.textContent = category;
+    filterCategoryEl.appendChild(optionEl);
+  });
+};
+loadCategories();
 
 const loadCompanies = () => {
   let companies = ["all"];
