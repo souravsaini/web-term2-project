@@ -1,6 +1,7 @@
 //DATA
 const products = [
   {
+    id: 1,
     company: "Adidas",
     image: "./images/products/f1.jpg",
     name: "Cartoon astronaut T-Shirts",
@@ -8,6 +9,7 @@ const products = [
     price: 78,
   },
   {
+    id: 2,
     company: "Peter England",
     image: "./images/products/f2.jpg",
     name: "Cartoon astronaut T-Shirts",
@@ -15,6 +17,7 @@ const products = [
     price: 89,
   },
   {
+    id: 3,
     company: "Louis Phillipe",
     image: "./images/products/f3.jpg",
     name: "Cartoon astronaut T-Shirts",
@@ -22,6 +25,7 @@ const products = [
     price: 78,
   },
   {
+    id: 4,
     company: "John Players",
     image: "./images/products/f4.jpg",
     name: "Cartoon astronaut T-Shirts",
@@ -29,39 +33,47 @@ const products = [
     price: 90,
   },
   {
-    company: "Gap",
-    image: "./images/products/f5.jpg",
-    name: "Cartoon astronaut T-Shirts",
-    ratings: 4,
-    price: 65,
-  },
-  {
-    company: "Gucci",
-    image: "./images/products/f6.jpg",
-    name: "Cartoon astronaut T-Shirts",
-    ratings: 4.5,
-    price: 99,
-  },
-  {
+    id: 5,
     company: "Levis",
-    image: "./images/products/f7.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    category: "Jeans",
+    image: "./images/products/1.png",
+    name: "Jeans",
     ratings: 4.5,
-    price: 77,
+    price: 95,
   },
   {
+    id: 6,
     company: "Van Heusen",
-    image: "./images/products/f8.jpg",
-    name: "Cartoon astronaut T-Shirts",
+    category: "Jeans",
+    image: "./images/products/2.png",
+    name: "Jeans",
+    ratings: 4.5,
+    price: 95,
+  },
+  {
+    id: 7,
+    company: "Nike",
+    category: "Shoes",
+    image: "./images/products/shoes1.jpg",
+    name: "Shoes",
+    ratings: 4.5,
+    price: 120,
+  },
+  {
+    id: 8,
+    company: "Reebok",
+    category: "Shoes",
+    image: "./images/products/shoes2.jpg",
+    name: "Shoes",
     ratings: 4,
-    price: 85,
+    price: 100,
   },
 ];
 
 //FUNCTIONS
 const loadFeaturedProducts = () => {
   const productContainer = document.querySelector(".product-container");
-  products.forEach(({ company, image, name, ratings, price }) => {
+  products.forEach(({ id, company, image, name, ratings, price }) => {
     let mainDiv = document.createElement("div");
     mainDiv.classList.add("product");
 
@@ -102,6 +114,9 @@ const loadFeaturedProducts = () => {
     aEl.setAttribute("href", "#");
 
     let iEl = document.createElement("i");
+    iEl.addEventListener("click", (e) =>
+      addToCart(e, id, company, image, name, price)
+    );
     iEl.classList.add("fa-solid");
     iEl.classList.add("fa-cart-shopping");
     iEl.classList.add("cart");
@@ -121,3 +136,60 @@ const loadFeaturedProducts = () => {
 };
 
 loadFeaturedProducts();
+
+const addToCart = (e, id, company, image, name, price) => {
+  e.preventDefault();
+  console.log(company, image, name, price);
+
+  let cart = localStorage.getItem("cart");
+  const product = {
+    company,
+    image,
+    name,
+    price,
+    id,
+  };
+  if (!cart) {
+    cart = [];
+    product["quantity"] = 1;
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("subtotal", price);
+    alert("Item added to cart");
+  } else {
+    cart = JSON.parse(cart);
+
+    const existingItem = cart.find((item) => item.id === id);
+
+    if (!existingItem) {
+      product["quantity"] = 1;
+      cart.push(product);
+    } else {
+      existingItem.quantity += 1;
+      const index = cart.findIndex((item) => item.id === id);
+      cart[index] = existingItem;
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    let storedSubtotal = parseFloat(localStorage.getItem("subtotal"));
+    console.log(storedSubtotal);
+    storedSubtotal += price;
+    localStorage.setItem("subtotal", storedSubtotal);
+
+    alert("Item added to cart");
+  }
+};
+
+const mainBtn = document.querySelector(".main-btn");
+mainBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  window.location.href = "./shop.html";
+});
+
+const shopBtn = document.querySelector(".shop-btn");
+shopBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  window.location.href = "./shop.html";
+});

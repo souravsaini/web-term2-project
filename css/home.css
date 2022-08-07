@@ -14,6 +14,14 @@
   left: 0;
 }
 
+#header .logo {
+  text-decoration: none;
+  font-size: 2rem;
+  color: var(--color-green-shade-1);
+  font-weight: 600;
+  font-style: italic;
+}
+
 #navbar {
   display: flex;
   align-items: center;
@@ -144,6 +152,12 @@
   position: absolute;
   bottom: 3.4rem;
   right: 2.4rem;
+}
+
+#featured-products .shop-btn {
+  background-color: var(--color-green-shade-1);
+  color: var(--color-white);
+  margin-top: 2rem;
 }
 
 /*BANNER*/

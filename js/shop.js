@@ -361,7 +361,6 @@ const filterCategoryEl = document.querySelector(".filter-category");
 
 const filterProducts = () => {
   let filteredProducts = products;
-
   if (filterCategoryEl.value !== "all") {
     filteredProducts = filteredProducts.filter(
       (product) => product.category === filterCategoryEl.value
@@ -381,6 +380,8 @@ const filterProducts = () => {
 
   const productContainer = document.querySelector(".product-container");
   productContainer.innerHTML = "";
+
+  loadMoreCount = 0;
 
   loadFeaturedProducts(filteredProducts);
 };
@@ -490,8 +491,8 @@ const loadFeaturedProducts = (products) => {
     let starDiv = document.createElement("div");
     starDiv.classList.add("star");
 
-    let i;
-    for (i = 1; i <= Math.floor(ratings); i++) {
+    let j;
+    for (j = 1; j <= Math.floor(ratings); j++) {
       let iEl = document.createElement("i");
       iEl.classList.add("fas");
       iEl.classList.add("fa-star");
@@ -560,6 +561,7 @@ const addToCart = (e, id, company, image, name, price) => {
     cart.push(product);
     localStorage.setItem("cart", JSON.stringify(cart));
     localStorage.setItem("subtotal", price);
+    alert("Item added to cart");
   } else {
     cart = JSON.parse(cart);
 
