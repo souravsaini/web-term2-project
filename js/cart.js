@@ -29,7 +29,7 @@ const populateCart = (cart) => {
       iEl.classList.add("far");
       iEl.classList.add("fa-times-circle");
       iEl.addEventListener("click", (e) => {
-        handleItemRemove(e, item, cart);
+        handleItemRemove(e, item);
       });
       aEl.appendChild(iEl);
       columns[0].appendChild(aEl);
@@ -191,14 +191,17 @@ const decrementQuantity = (e, price, id) => {
   populateCartTotal();
 };
 
-handleItemRemove = (e, item, cart) => {
+handleItemRemove = (e, item) => {
   e.preventDefault();
 
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  const removingItem = cart.find((cartItem) => cartItem.id === item.id);
   cart = cart.filter((cartItem) => cartItem.id !== item.id);
+  console.log(cart);
   let subTotal = parseFloat(localStorage.getItem("subtotal"));
   console.log(subTotal);
   console.log(item.price);
-  subTotal -= item.price * item.quantity;
+  subTotal -= item.price * removingItem.quantity;
   localStorage.setItem("subtotal", JSON.stringify(subTotal));
   localStorage.setItem("cart", JSON.stringify(cart));
   populateCart(JSON.stringify(cart));
